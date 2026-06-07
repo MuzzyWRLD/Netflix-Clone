@@ -9,3 +9,5 @@ __pycache__/
 
 # Django Einstellungen (falls du mal eine secret_key Datei hättest)
 *.pyc
+
+*.txt
