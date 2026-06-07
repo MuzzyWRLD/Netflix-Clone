@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ film.title }} - Netflix Clone</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body style="background-color: #111; margin: 0;">
+
+    <section id="hero-kasten" style="background-image: url('{{ film.image_url }}'); height: 100vh;">
+
+        <div class="hero-inhalt" style="margin-top: 100px;">
+            <h1 id="hero-titel">{{ film.title }}</h1>
+            <p id="hero-text">{{ film.description }}</p>
+
+            <div class="knopf-kiste">
+                <button class="knopf-play">▶ Abspielen</button>
+                <a href="/" style="color: white; margin-left: 20px; text-decoration: none; font-family: sans-serif;">
+                    Zurück zur Auswahl
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>

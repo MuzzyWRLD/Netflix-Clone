@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <nav class="obere-leiste">
+        <div class="logo">NETFLIX</div>
+        <div class="profil" style="display: flex; align-items: center; gap: 15px;">
+
+    <span style="color: white; font-weight: bold;">Hallo, {{ user.username }}!</span>
+
+    <form action="/accounts/logout/" method="post" style="margin: 0;">
+        {% csrf_token %}
+        <button type="submit" style="background-color: transparent; color: gray; border: none; cursor: pointer; font-size: 14px;">
+            Ausloggen
+        </button>
+    </form>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profilbild" style="width: 40px; border-radius: 5px;">
+        </div>
+    </nav>
+    <section class="hero" id="hero-kasten">
+        <div class="hero-inhalt">
+            <h1 id="hero-titel">Name des Films</h1>
+            <p id="hero-text">Beschreibung des Films</p>
+            <div class="knopf-kiste">
+                <button class="knopf-play">Play</button>
+                <button class="knopf-info">Mehr Info</button>
+            </div>
+        </div>
+    </section>
+    <h1 id="kategorie">Beliebte Filme auf Netflix</h1>
+
+    <div class="film-reihe">
+
+    {% for film in filme %}
+
+        <a href="/film/{{ film.id }}/">
+            <img src="{{ film.image_url }}" alt="{{ film.title }}" class="film-poster">
+        </a>
+
+    {% endfor %}
+
+    </div>
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>

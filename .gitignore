@@ -1,0 +1,11 @@
+# Virtuelle Umgebung
+blase/
+
+# Datenbank (Hier könnten Passwörter drin stehen)
+db.sqlite3
+
+# Python Cache
+__pycache__/
+
+# Django Einstellungen (falls du mal eine secret_key Datei hättest)
+*.pyc

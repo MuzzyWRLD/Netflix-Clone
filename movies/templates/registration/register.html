@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Netflix - Registrierung</title>
+</head>
+<body style="background-color: #111; color: white; text-align: center; padding-top: 100px; font-family: sans-serif;">
+
+    <h2>Neu bei Netflix? Registriere dich hier!</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" style="background-color: red; color: white; padding: 10px 20px; border: none; cursor: pointer; margin-top: 15px; font-weight: bold;">
+            Konto erstellen
+        </button>
+    </form>
+
+    <p style="margin-top: 30px;">
+        <a href="/accounts/login/" style="color: gray; text-decoration: none;">Schon ein Konto? Zurück zum Login</a>
+    </p>
+
+</body>
+</html>
